@@ -167,5 +167,5 @@ brew install --cask font-3270-nerd-font
 #### 言語
 ```zsh
 # node
-brew install node
+brew install node python@3.14
 ```
