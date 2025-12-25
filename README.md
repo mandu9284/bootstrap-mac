@@ -15,19 +15,9 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 ```
 
 ### ログイン
-#### junha
-* Google
-* X
-* dcincide
-#### mandu
 * Google
 * X
 * Github
-#### calme
-* Google
-* X
-* pixiv
-* pinterest
 
 ## 開発環境構築
 ### インストール
@@ -42,20 +32,42 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 #### パッケージマネージャ
 * [Homebrew](https://brew.sh/)
 
+#### シェルカスタマイズ
+* [starship](https://formulae.brew.sh/formula/starship#default)
+
+```zsh
+brew install starship
+```
+
 #### エディター
 * [NeoVim](https://neovim.io/doc/install/)
 * [LazyVim](https://www.lazyvim.org/installation)
 
+```zsh
+brew install neovim
+```
+
 #### CLIツール
-* [fzf](https://formulae.brew.sh/formula/fzf)
+* [fzf](https://formulae.brew.sh/formula/fzf) 
 * [tmux](https://formulae.brew.sh/formula/tmux)
 * [eza](https://formulae.brew.sh/formula/eza#default)
 * [bat](https://formulae.brew.sh/formula/bat#default)
 * [ripgrep](https://formulae.brew.sh/formula/ripgrep#default)
 * [fd](https://formulae.brew.sh/formula/fd#default)
 * [zoxide](https://formulae.brew.sh/formula/zoxide#default)
+* [sheldon](https://formulae.brew.sh/formula/sheldon#default)
+* [mise](https://formulae.brew.sh/formula/mise#default)
+* [gh](https://formulae.brew.sh/formula/gh#default)
+
 ```zsh
-brew install fzf tmux eza bat ripgrep fd zoxide
+brew install fzf tmux eza bat ripgrep fd zoxide sheldon mise gh
+```
+
+#### font
+* [nerd font](https://formulae.brew.sh/cask/font-3270-nerd-font#default)
+
+```zsh
+brew install --cask font-3270-nerd-font
 ```
 
 #### LazyVimのパッケージ
