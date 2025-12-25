@@ -41,3 +41,24 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 
 #### パッケージマネージャ
 * [Homebrew](https://brew.sh/)
+
+#### エディター
+* [NeoVim](https://neovim.io/doc/install/)
+* [LazyVim](https://www.lazyvim.org/installation)
+
+#### CLIツール
+* [fzf](https://formulae.brew.sh/formula/fzf)
+* [tmux](https://formulae.brew.sh/formula/tmux)
+* [eza](https://formulae.brew.sh/formula/eza#default)
+* [bat](https://formulae.brew.sh/formula/bat#default)
+* [ripgrep](https://formulae.brew.sh/formula/ripgrep#default)
+* [fd](https://formulae.brew.sh/formula/fd#default)
+* [zoxide](https://formulae.brew.sh/formula/zoxide#default)
+```zsh
+brew install fzf tmux eza bat ripgrep fd zoxide
+```
+
+#### LazyVimのパッケージ
+1. LSP
+2. Linter
+3. Formmater
