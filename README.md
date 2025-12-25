@@ -161,8 +161,31 @@ brew install --cask font-3270-nerd-font
 
 #### LazyVimのパッケージ
 1. LSP
+  * tombi
+  * css-lsp
+  * gh-actions-language-server
+  * html-lsp
+  * marksman
+  * ruff
+  * stylua
+  * typescript-language-server
+  * yaml-languge-server
 2. Linter
+  * markdownlint
+  * tomlbi
+  * eslint_d
+  * ruff
 3. Formmater
+  * prettierd
+  * jq
+  * fixjson
+  * markdownlint
+  * yamlfix
+  * sql-formatter
+  * tombi
+  * ruff
+  * shrmt
+  * stylua
 
 #### 言語
 ```zsh
