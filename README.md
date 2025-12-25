@@ -109,6 +109,7 @@ brew install neovim
 * [fzf](https://formulae.brew.sh/formula/fzf) 
 * [tmux](https://formulae.brew.sh/formula/tmux)
 * [tree](https://formulae.brew.sh/formula/tree#default)
+* [jq](https://formulae.brew.sh/formula/jq#default)
 * [eza](https://formulae.brew.sh/formula/eza#default)
 ```zsh
 # .zshrc
@@ -150,7 +151,7 @@ zoxide = "latest"
 * [gh](https://formulae.brew.sh/formula/gh#default)
 
 ```zsh
-brew install fzf tmux tree eza bat ripgrep fd zoxide mise gh
+brew install fzf tmux tree jq eza bat ripgrep fd zoxide mise gh
 ```
 
 #### font
