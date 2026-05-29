@@ -258,7 +258,7 @@ brew install mise
 
 1. Generate config file()
 ```zsh
-mkdir -p .config/mise && .config/mise/config.toml
+mkdir -p .config/mise && touch .config/mise/config.toml
 ```
 
 2. config file contents
