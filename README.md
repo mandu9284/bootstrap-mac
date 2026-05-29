@@ -97,6 +97,11 @@ starship preset tokyo-night -o ~/.config/starship.toml
 export STARSHIP_CONFIG=~/example/non/default/path/starship.toml
 ```
 
+5. set .zshrc
+```zsh
+touch .zshrc && echo "eval "$(starship init zsh)" >> .zshrc
+```
+
 **sheldon**
 
 * [sheldon](https://formulae.brew.sh/formula/sheldon#default)
