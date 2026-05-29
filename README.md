@@ -250,10 +250,16 @@ brew install --cask font-jetbrains-mono-nerd-font
 
 0. node version package manager
 
-* [mise](https://formulae.brew.sh/formula/mise#default)
+* [mise](https://github.com/jdx/mise)
 
 ```zsh
-brew install mise
+curl https://mise.run | sh
+
+~/.local/bin/mise --version
+
+echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
+
+mise doctor
 ```
 
 1. Generate config file()
@@ -265,14 +271,7 @@ mkdir -p .config/mise && touch .config/mise/config.toml
 ```toml
 # ~/.config/mise/config.toml
 [tools]
-awscli = "latest"
 node = "latest"
-ruby = "3.4.2"
-neovim = "latest"
-terraform = "latest"
-go = "latest"
-postgres = "17"
-zoxide = "latest"
 ```
 
 3. pnpm 
