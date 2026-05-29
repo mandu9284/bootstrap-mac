@@ -197,8 +197,10 @@ https://formulae.brew.sh/cask/cursor#default
 
 2. cursor cli install
 
+[cursor-cask](https://formulae.brew.sh/cask/cursor#default)
+
 ```zsh
-curl https://cursor.com/install -fsS | bash
+brew install --cask cursor
 ```
 
 #### CLI Tools
@@ -241,10 +243,6 @@ eval "$(zoxide init zsh --cmd cd)"
 * [font-jetbrains-mono-nerd-font]([https://formulae.brew.sh/cask/font-3270-nerd-font#default](https://formulae.brew.sh/cask/font-jetbrains-mono-nerd-font))
 
 ```zsh
-brew tap homebrew/cask-fonts
-```
-
-```zsh
 brew install --cask font-jetbrains-mono-nerd-font
 ```
 
@@ -255,7 +253,7 @@ brew install --cask font-jetbrains-mono-nerd-font
 * [mise](https://formulae.brew.sh/formula/mise#default)
 
 ```zsh
-brew mise
+brew install mise
 ```
 
 1. Generate config file()
