@@ -99,7 +99,11 @@ export STARSHIP_CONFIG=~/example/non/default/path/starship.toml
 
 5. set .zshrc
 ```zsh
-touch .zshrc && echo "eval "$(starship init zsh)"" >> .zshrc
+touch .zshrc 
+```
+```zsh
+### starship
+eval "$(starship init zsh)"
 ```
 
 **sheldon**
