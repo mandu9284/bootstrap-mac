@@ -1,82 +1,114 @@
-# bootstrap-mac
-MacBookの初期化から開発環境構築までの手順をまとめたリポジトリ
 
-## MacBook初期化
-### インストール
+# bootstrap-mac
+A repository summarizing the steps from MacBook initialization to development environment setup.
+
+## MacBook Setup
+### Install
 * Chrome
 * Logi Options
 
-### キーボード設定
-1. キーのリピート速度：速い（最大）
-2. リピート入力認識までの時間：短い（最大）
-3. 連打できるように下記のコマンドをターミナルに入力
+### Keyboard Settings
+1. Key Repeat Rate: Fast (Max)
+2. Delay Until Repeat: Short (Max)
+3. change capslock and control each other
+4. Enter the following command in the terminal to enable key repetition on long-press:
+
 ```zsh
 defaults write -g ApplePressAndHoldEnabled -bool false
+
 ```
 
-### ログイン
+### Logins
+
 * Google
 * X
-* Github
+* GitHub
 
-## 開発環境構築
-### インストール
-#### アプリケーション
-* [Github Desktop](https://desktop.github.com/download/)
-* [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-* [DBeaver](https://dbeaver.io/download/)
-* [Postman](https://www.postman.com/downloads/)
-* [Figma](https://www.figma.com/ja-jp/downloads/)
-* [iTerm2](https://iterm2.com/downloads.html)
+### Development Environment Setup
 
-#### パッケージマネージャ
+#### Package Manager
+
 * [Homebrew](https://brew.sh/)
 
-#### シェルカスタマイズ
-**starship**
-* [starship](https://formulae.brew.sh/formula/starship#default)
-* [starship config](https://starship.rs/ja-JP/config/)
+#### Applications
 
+* [GitHub Desktop](https://desktop.github.com/download/)
+
+```zsh
+brew install --cask github
+```
+
+* [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+```zsh
+brew install --cask docker-desktop
+```
+
+* [iTerm2](https://iterm2.com/downloads.html)
+
+```zsh
+brew install --cask iterm2
+```
+
+
+#### Shell Customization
+
+**starship**
+
+* [brew-starship](https://formulae.brew.sh/formula/starship#default)
+* [starship config](https://starship.rs/config/)
+
+1. install starship using brew 
 ```zsh
 brew install starship
 ```
 
+2. make the directory and a config file
 ```zsh
-# configファイル生成
 mkdir -p ~/.config && touch ~/.config/starship.toml
+
 ```
 
 ```toml
-# エディターの補完を設定スキーマに合わせて取得
-"$schema" = 'https://starship.rs/config-schema.json'
+# Fetch editor completions matching the config schema
+"$schema" = '[https://starship.rs/config-schema.json](https://starship.rs/config-schema.json)'
 
-# シェルのプロンプトの間に空行を挿入する
+# Inserts a blank line between shell prompts
 add_newline = true
 
-# 記号"❯"を記号"➜"に置き換える
-[character] # 設定対象のモジュール名は 'character'
-success_symbol = '[➜](bold green)' # セグメント 'success_symbol' を '➜' 配色 'bold green' (太字の緑色) に設定
+# Replace the "❯" symbol with "➜"
+[character] # The target module to configure is 'character'
+success_symbol = '[➜](bold green)' # Set the 'success_symbol' segment to '➜' with a 'bold green' color scheme
 
-# package モジュールを無効化してプロンプトから完全に非表示にする
+# Disable the package module to hide it completely from the prompt
 [package]
 disabled = true
+
 ```
 
+
+3. set tokyo-night theme
 ```zsh
-# テーマインストール（tokyo night）
 starship preset tokyo-night -o ~/.config/starship.toml
 ```
 
+4. set starship config variable in .zprofile
+```zsh
+export STARSHIP_CONFIG=~/example/non/default/path/starship.toml
+```
+
 **sheldon**
+
 * [sheldon](https://formulae.brew.sh/formula/sheldon#default)
 
 ```zsh
-brew install fzf tmux eza bat ripgrep fd zoxide mise gh
+brew install sheldon 
 ```
 
 ```zsh
-# configファイル生成
+# Generate config file
 mkdir -p .config/sheldon && touch .config/sheldon/plugins.toml
+
 ```
 
 ```toml
@@ -92,27 +124,95 @@ github = "zsh-users/zsh-completions"
 [plugins.zsh-async]
 github = "mafredri/zsh-async"
 
-# syntax-highlighting は最後に読み込む
+# syntax-highlighting must be loaded last
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
+
 ```
 
-#### エディター
+#### Editors
+
 * [NeoVim](https://neovim.io/doc/install/)
 * [LazyVim](https://www.lazyvim.org/installation)
 
+1. neovim install
 ```zsh
 brew install neovim
 ```
 
-#### CLIツール
-* [fzf](https://formulae.brew.sh/formula/fzf) 
+2. cloning
+```zsh
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+```
+
+3. LazyVim Packages
+
+**LSP**
+
+* taplo
+* css-lsp
+* gh-actions-language-server
+* html-lsp
+* marksman
+* ruff
+* stylua
+* typescript-language-server
+* yaml-language-server
+
+**Linter**
+
+* markdownlint
+* taplo
+* eslint_d
+* ruff
+
+**Formatter**
+
+* prettierd
+* jq
+* fixjson
+* markdownlint
+* yamlfix
+* sql-formatter
+* taplo
+* ruff
+* shfmt
+* stylua
+
+#### AI Tools
+
+1. cursor install 
+```zsh
+https://formulae.brew.sh/cask/cursor#default
+```
+
+2. cursor cli install
+
+```zsh
+curl https://cursor.com/install -fsS | bash
+```
+
+#### CLI Tools
+
+* [fzf](https://formulae.brew.sh/formula/fzf)
 * [tmux](https://formulae.brew.sh/formula/tmux)
 * [tree](https://formulae.brew.sh/formula/tree#default)
 * [jq](https://formulae.brew.sh/formula/jq#default)
 * [eza](https://formulae.brew.sh/formula/eza#default)
+* [bat](https://formulae.brew.sh/formula/bat#default)
+* [ripgrep](https://formulae.brew.sh/formula/ripgrep#default)
+* [fd](https://formulae.brew.sh/formula/fd#default)
+* [zoxide](https://formulae.brew.sh/formula/zoxide#default)
+* [gh](https://formulae.brew.sh/formula/gh#default)
+* [lazygit](https://formulae.brew.sh/formula/lazygit#default)
+
+1. installations
 ```zsh
-# .zshrc
+brew install fzf tmux tree jq eza bat ripgrep fd zoxide gh lazygit
+```
+
+2. alisas
+```zsh
 alias ei="eza --icons --git"
 alias ea="eza -la --icons --git"
 alias ee="eza -aahl --icons --git"
@@ -121,21 +221,40 @@ alias ls=ei
 alias la=ea
 alias ll=ee
 ```
-* [bat](https://formulae.brew.sh/formula/bat#default)
-* [ripgrep](https://formulae.brew.sh/formula/ripgrep#default)
-* [fd](https://formulae.brew.sh/formula/fd#default)
-* [zoxide](https://formulae.brew.sh/formula/zoxide#default)
+
+3. zoxide using default command (cd)
 ```zsh
-# .zshrc
 eval "$(zoxide init zsh --cmd cd)"
 ```
+
+#### Fonts
+
+* [font-jetbrains-mono-nerd-font]([https://formulae.brew.sh/cask/font-3270-nerd-font#default](https://formulae.brew.sh/cask/font-jetbrains-mono-nerd-font))
+
+```zsh
+brew tap homebrew/cask-fonts
+```
+
+```zsh
+brew install --cask font-jetbrains-mono-nerd-font
+```
+
+#### node setting
+
+0. node version package manager
+
 * [mise](https://formulae.brew.sh/formula/mise#default)
 
 ```zsh
-# 設定ファイル生成
+brew mise
+```
+
+1. Generate config file()
+```zsh
 mkdir -p .config/mise && .config/mise/config.toml
 ```
 
+2. config file contents
 ```toml
 # ~/.config/mise/config.toml
 [tools]
@@ -148,52 +267,44 @@ go = "latest"
 postgres = "17"
 zoxide = "latest"
 ```
-* [gh](https://formulae.brew.sh/formula/gh#default)
 
-```zsh
-brew install fzf tmux tree jq eza bat ripgrep fd zoxide mise gh
-```
-
-#### font
-* [nerd font](https://formulae.brew.sh/cask/font-3270-nerd-font#default)
-
-```zsh
-brew install --cask font-3270-nerd-font
-```
-
-#### LazyVimのパッケージ
-1. LSP
-  * tombi
-  * css-lsp
-  * gh-actions-language-server
-  * html-lsp
-  * marksman
-  * ruff
-  * stylua
-  * typescript-language-server
-  * yaml-languge-server
-2. Linter
-  * markdownlint
-  * tomlbi
-  * eslint_d
-  * ruff
-3. Formmater
-  * prettierd
-  * jq
-  * fixjson
-  * markdownlint
-  * yamlfix
-  * sql-formatter
-  * tombi
-  * ruff
-  * shrmt
-  * stylua
-
-#### 言語
-```zsh
-# node
-brew install node python@3.14
-```
-
-#### nodeパッケージマネージャー
+3. pnpm 
 * [pnpm](https://pnpm.io/installation)
+
+```zsh
+brew install pnpm 
+```
+
+4. set security setting in .npmrc 
+
+```zsh
+touch ~/.npmrc
+```
+
+```text
+# Enforces strict compliance with the Node/npm versions specified in package.json's "engines" field.
+engine-strict=true
+
+# Disables execution of all scripts (like pre/postinstall) defined in dependency packages for security.
+ignore-scripts=true
+
+# Automatically runs a security vulnerability scan (npm audit) during package installations.
+audit=true
+
+# Blocks the installation of packages published less than 1 day ago to prevent zero-day supply chain attacks.
+min-release-age=1
+
+# Saves the exact version number to package.json instead of using version ranges like ^ or ~.
+save-exact=true
+
+# Sets the minimum vulnerability severity level that will cause npm audit to fail the build to "high".
+audit-level=high
+
+# Forces installation to fail if there are any conflicting or missing peer dependencies.
+strict-peer-deps=true
+
+# Allows Git-based dependency installations to run lifecycle scripts as root only if npm was run as root.
+allow-git=root
+```
+
+
